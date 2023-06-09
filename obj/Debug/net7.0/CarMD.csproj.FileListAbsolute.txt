@@ -1,0 +1,15 @@
+E:\c#\CarMD\CarMD\bin\Debug\net7.0\CarMD.exe
+E:\c#\CarMD\CarMD\bin\Debug\net7.0\CarMD.deps.json
+E:\c#\CarMD\CarMD\bin\Debug\net7.0\CarMD.runtimeconfig.json
+E:\c#\CarMD\CarMD\bin\Debug\net7.0\CarMD.dll
+E:\c#\CarMD\CarMD\bin\Debug\net7.0\CarMD.pdb
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.csproj.AssemblyReference.cache
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.GeneratedMSBuildEditorConfig.editorconfig
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.AssemblyInfoInputs.cache
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.AssemblyInfo.cs
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.csproj.CoreCompileInputs.cache
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.dll
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\refint\CarMD.dll
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.pdb
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\CarMD.genruntimeconfig.cache
+E:\c#\CarMD\CarMD\obj\Debug\net7.0\ref\CarMD.dll
