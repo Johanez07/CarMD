@@ -1,45 +1,44 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using static Program;
 
 namespace CarMD
 {
     internal class DisplayCar
     {
-        public DisplayCar() { }
+        int screenX;
+        int screenY;
 
-        public void Display(Car car)
+        public DisplayCar(int x, int y)
         {
-            int posX = car.GetPosX();
-            int posY = car.GetPosY();
+            screenX = x;
+            screenY = y;
+        }
 
-            bool engineStatus = car.GetEngineStatus();
-
-            string[] carDisplay = car.GetCarProject();
-
-
-            Console.WriteLine("CarMD v. 0.1 - 09/06/2023");
-            Console.WriteLine("Car Engine: " + engineStatus);
-
-
-            string lineX = "";
-
-            for (int y = 0; y < posY; y++)
+        public void ShowScreen(char[,] pixels)
+        {
+            for(int prePosY = 0; prePosY < (screenY+2); prePosY++)
             {
+                for (int prePosX = 0; prePosX < (screenX+2); prePosX++)
+                {
+                    int posX = prePosX - 1;
+                    int posY = prePosY - 1;
+
+                    if (prePosY == 0) Console.Write("-");
+                    else if (prePosY == screenY+1) Console.Write("-");
+                    else if (prePosX == 0) Console.Write("|");
+                    else if (prePosX == screenX+1) Console.Write("|");
+                    else if(pixels[posX, posY]!='\0') Console.Write(pixels[posX, posY]);
+                    else Console.Write(" ");
+
+
+                }
+
                 Console.WriteLine();
-            }
-
-            for (int x = 0; x < posX; x++)
-            {
-                lineX = lineX + " ";
-            }
-
-            for (int i = 0; i < carDisplay.Length; i++)
-            {
-                Console.WriteLine(lineX + carDisplay[i]);
             }
         }
     }
