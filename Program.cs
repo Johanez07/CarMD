@@ -11,24 +11,37 @@ internal class Program
 
     private static void Main(string[] args)
     {
-        int screenX = 50;
+        int screenX = 75;
         int screenY = 15;
 
         char[,] pixels = new char[screenX, screenY];
+        char[,] colPixels = new char[screenX, screenY];
+
+        string[] objTxt = {
+            "|\\---/|",
+            "| o_o |",
+            " \\_^_/"
+        };
+
+        Obj obj = new Obj(pixels, screenX, screenY, 0, "cat", 1, 1, true, objTxt);
+
+        string[] objTxt2 = {
+            "^..^      /",
+            "/_/\\_____/",
+            "   /\\   /\\",
+            "  /  \\ /  \\"
+        };
+
+        Obj obj2 = new Obj(pixels, screenX, screenY, 0, "dog", 5, 5, true, objTxt2);
 
 
-        Obj obj = new Obj(pixels, screenX, screenY, 0, "cat", 1, 1);
-
-
-        //Car myCar = new Car();
         DisplayCar screen = new DisplayCar(screenX, screenY);
 
         while(true)
         {
-            Console.Clear();
             Console.WriteLine("CarMD v. 0.2 - 13/06/2023");
             Console.WriteLine("Screen Size: " + screenX + ", " + screenY);
-            Console.WriteLine("TestObj: " +obj.x+", "+obj.y+"   " + obj.name);
+            Console.WriteLine("TestObj: " + obj.x + ", " + obj.y + "   " + obj.name + " isOnScreen: " + obj.isOnScreenBool + " test: "+ obj.testString);
             screen.ShowScreen(pixels);
 
 
@@ -42,31 +55,8 @@ internal class Program
                 case ConsoleKey.RightArrow: obj.Move(pixels, 1, 0); break;
                 case ConsoleKey.E: break;
             }
-
-
-        }
-
-
-
-
-
-
-        /*while(true) {
             Console.Clear();
-
-            screen.Display(myCar);
-
-            System.ConsoleKey userInput = Console.ReadKey(true).Key;
-
-            switch (userInput) {
-                case ConsoleKey.UpArrow: myCar.GoUp(); break;
-                case ConsoleKey.DownArrow: myCar.GoDown(); break;
-                case ConsoleKey.LeftArrow: myCar.GoLeft(); break;
-                case ConsoleKey.RightArrow: myCar.GoRight(); break;
-                case ConsoleKey.R: myCar.RunEngine(); break;
-                case ConsoleKey.E: break;
-            }
-        }*/
+        }
 
     }
 }
