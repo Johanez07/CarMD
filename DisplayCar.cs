@@ -21,6 +21,8 @@ namespace CarMD
 
         public void ShowScreen(char[,] pixels)
         {
+            StringBuilder screenBuffer = new StringBuilder();
+
             for(int prePosY = 0; prePosY < (screenY+2); prePosY++)
             {
                 for (int prePosX = 0; prePosX < (screenX+2); prePosX++)
@@ -28,18 +30,19 @@ namespace CarMD
                     int posX = prePosX - 1;
                     int posY = prePosY - 1;
 
-                    if (prePosY == 0) Console.Write("-");
-                    else if (prePosY == screenY+1) Console.Write("-");
-                    else if (prePosX == 0) Console.Write("|");
-                    else if (prePosX == screenX+1) Console.Write("|");
-                    else if(pixels[posX, posY]!='\0') Console.Write(pixels[posX, posY]);
-                    else Console.Write(" ");
+                    if (prePosY == 0) screenBuffer.Append("-");
+                    else if (prePosY == screenY+1) screenBuffer.Append("-");
+                    else if (prePosX == 0) screenBuffer.Append("|");
+                    else if (prePosX == screenX+1) screenBuffer.Append("|");
+                    else if(pixels[posX, posY]!='\0') screenBuffer.Append(pixels[posX, posY]);
+                    else screenBuffer.Append(" ");
 
 
                 }
-
-                Console.WriteLine();
+                screenBuffer.AppendLine();
             }
+
+            Console.Write(screenBuffer.ToString());
         }
     }
 }
